@@ -61,6 +61,9 @@ public class LockTestHarness {
         runTest(new TASLock(), "TasLock", threads, iters);
         runTest(new TTASLock(), "TTASLock", threads, iters);
         runTest(new BackoffLock(), "BackoffLock", threads, iters);
+        runTest(new ALock(threads), "ALock", threads, iters);
+        runTest(new CLHLock(), "CLHLock", threads, iters);
+        runTest(new MCSLock(), "MCSLock", threads, iters);
         runPlain(threads, iters);
     }
 }
