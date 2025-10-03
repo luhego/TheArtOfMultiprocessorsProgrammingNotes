@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Lock;
 
 public class MCSLock implements Lock {
     AtomicReference<QNode> tail;
-    ThreadLocal<QNode> myNode;
+    protected ThreadLocal<QNode> myNode;
 
     public MCSLock() {
         tail = new AtomicReference<QNode>(null);
@@ -63,8 +63,12 @@ public class MCSLock implements Lock {
         return false;
     }
 
-    class QNode {
+    protected class QNode {
         volatile boolean locked = false;
         volatile QNode next = null;
+
+        public QNode getNext() {
+            return next;
+        }
     }
 }
