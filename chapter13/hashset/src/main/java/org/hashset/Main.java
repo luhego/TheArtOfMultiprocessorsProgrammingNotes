@@ -10,8 +10,8 @@ import java.util.concurrent.Executors;
 
 public class Main {
     private static final int THREADS = 8;
-    private static final int ELEMENTS_PER_THREAD = 100_000;
-    private static final int INITIAL_CAPACITY = 16;
+    private static final int ELEMENTS_PER_THREAD = 500_000;
+    private static final int INITIAL_CAPACITY = 32;
 
     public static void main(String[] args) throws InterruptedException {
         List<BaseHashSet<Integer>> sets = List.of(
